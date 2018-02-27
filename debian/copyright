@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: funcsigs
 Source: http://funcsigs.readthedocs.org
 
@@ -8,7 +8,7 @@ License: Apache-2
 
 Files: debian/*
 Copyright: (c) 2014, Thomas Goirand <zigo@debian.org>
-           (c) 2016, Ondřej Nový <onovy@debian.org>
+           (c) 2016-2018, Ondřej Nový <onovy@debian.org>
 License: Apache-2
 
 License: Apache-2
