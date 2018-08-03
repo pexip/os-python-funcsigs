@@ -1,3 +1,9 @@
+python-funcsigs (1.0.2-3pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Fri, 03 Aug 2018 16:56:39 +0000
+
 python-funcsigs (1.0.2-3) unstable; urgency=medium
 
   [ Ondřej Nový ]
