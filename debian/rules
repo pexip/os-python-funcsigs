@@ -1,42 +1,16 @@
 #!/usr/bin/make -f
 
-PYTHONS:=$(shell pyversions -vr)
-PYTHON3S:=$(shell py3versions -vr)
+export PYBUILD_NAME=funcsigs
 
 UPSTREAM_GIT := https://github.com/testing-cabal/funcsigs.git
 -include /usr/share/openstack-pkg-tools/pkgos.make
 
 %:
-	dh $@ --buildsystem=python_distutils --with python2,python3,pypy,sphinxdoc
-
-override_dh_auto_install:
-	set -e ; for pyvers in $(PYTHONS); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python-funcsigs; \
-	done
-	set -e ; for pyvers in $(PYTHON3S); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python3-funcsigs; \
-	done
-	pypy setup.py install --install-layout=deb \
-		--root $(CURDIR)/debian/pypy-funcsigs
-	rm -rf $(CURDIR)/debian/py*-funcsigs/usr/lib/py*/dist-packages/*.pth
-
-override_dh_auto_test:
-ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	set -e ; for pyvers in $(PYTHONS) $(PYTHON3S); do \
-		python$$pyvers setup.py test ; \
-	done
-endif
+	dh $@ --buildsystem=pybuild --with python3,sphinxdoc
 
 override_dh_sphinxdoc:
-	sphinx-build -b html docs debian/python-funcsigs-doc/usr/share/doc/python-funcsigs-doc/html
+	python3 -m sphinx -b html docs debian/python-funcsigs-doc/usr/share/doc/python-funcsigs-doc/html
 	dh_sphinxdoc -O--buildsystem=python_distutils
-
-
-override_dh_clean:
-	dh_clean -O--buildsystem=python_distutils
-	rm -rf build
 
 
 # Commands not to run
