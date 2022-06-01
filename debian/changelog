@@ -1,3 +1,17 @@
+python-funcsigs (1.0.2-5) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Add trailing tilde to min version depend to allow backports
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs
+  * Use debhelper-compat instead of debian/compat.
+  * d/copyright: Bump my copyright year.
+
+  [ Sandro Tosi ]
+  * Drop python2/pypy support; Closes: #937769
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 01 Jun 2020 21:57:55 -0400
+
 python-funcsigs (1.0.2-4pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
