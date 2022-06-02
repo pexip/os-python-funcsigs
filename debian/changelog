@@ -1,3 +1,9 @@
+python-funcsigs (1.0.2-5pexip1) pexip; urgency=medium
+
+  * Initial bullseye build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 02 Jun 2022 14:42:47 +0100
+
 python-funcsigs (1.0.2-5) unstable; urgency=medium
 
   [ Ondřej Nový ]
